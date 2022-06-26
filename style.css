@@ -142,6 +142,15 @@ main{
     opacity: 0.6;
 }
 
+#tasks .time{
+    color:var(--gray);
+    font-size: 0.75rem;
+    display: flex;
+    justify-content:right;
+    margin-right: 20px;
+
+}
+
 .task .actions .edit{
     background: linear-gradient(to right, var(--pink), var(--purple));
     -webkit-background-clip: text;

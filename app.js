@@ -3,7 +3,9 @@
     const form = document.querySelector('#new-task-form');
     const input = document.querySelector('#new-task-input');
     const list_el = document.querySelector('#tasks');
-
+    var date = new Date();
+    
+    console.log(date.toLocaleDateString([]));
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -51,6 +53,11 @@
         task_btn_delete.innerHTML = "Delete";
 
 
+        /* <p class="time"> */
+        const time_el = document.createElement('p');
+        time_el.classList.add("time");
+        time_el.innerText = date.toLocaleDateString([]);
+        list_el.appendChild(time_el);
 
         /* inheritance */
         task_actions.appendChild(task_btn_edit);
@@ -73,6 +80,7 @@
         })
         task_btn_delete.addEventListener('click', () =>{
             list_el.removeChild(task_el);
+            list_el.removeChild(time_el);
         })
         
     })
